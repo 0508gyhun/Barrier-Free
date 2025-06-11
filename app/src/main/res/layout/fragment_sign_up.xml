@@ -30,17 +30,16 @@
         android:id="@+id/tv_create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to create account"
-        android:textSize="18dp"
+        android:text="@string/welcome_to_create_account"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/login_id_text_field_input_layout"
+        app:layout_constraintBottom_toTopOf="@id/signup_id_text_field_input_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_app_title" />
 
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_id_text_field_input_layout"
+        android:id="@+id/signup_id_text_field_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -55,14 +54,14 @@
         app:startIconDrawable="@drawable/ic_android">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_id_text_field_edit_text"
+            android:id="@+id/signup_id_text_field_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_password_text_field_input_layout"
+        android:id="@+id/signup_password_text_field_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -72,18 +71,17 @@
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_id_text_field_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/signup_id_text_field_input_layout"
         app:startIconContentDescription="@string/android_icon"
         app:startIconDrawable="@drawable/ic_android">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_password_text_field_edit_text"
+            android:id="@+id/signup_password_text_field_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <Button
         android:id="@+id/btn_create_account"
@@ -95,6 +93,6 @@
         android:text="@string/create_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_password_text_field_input_layout" />
+        app:layout_constraintTop_toBottomOf="@id/signup_password_text_field_input_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
