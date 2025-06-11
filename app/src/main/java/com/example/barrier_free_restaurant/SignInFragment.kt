@@ -10,7 +10,7 @@ import com.example.barrier_free_restaurant.databinding.FragmentSignInBinding
 class SignInFragment: Fragment() {
 
     private var _binding : FragmentSignInBinding? = null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,7 +18,7 @@ class SignInFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSignInBinding.inflate(inflater,container,false)
-        return binding.root!!
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
