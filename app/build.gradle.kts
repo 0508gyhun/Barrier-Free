@@ -58,4 +58,6 @@ dependencies {
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+
+    implementation("com.naver.maps:map-sdk:3.21.0")
 }

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BarrierFreeRestaurant"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.naver.maps.map.NCP_KEY_ID"
+            android:value="4f0sk22uzy" />
         <activity
             android:name=".HomeActivity"
             android:exported="true">
