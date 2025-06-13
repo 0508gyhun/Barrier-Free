@@ -10,4 +10,7 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="welcome_to_create_account">Welcome to create account</string>
+    <string name="search">search</string>
+    <string name="map">map</string>
+    <string name="my_page">my page</string>
 </resources>
