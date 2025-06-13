@@ -16,5 +16,13 @@
         android:id="@+id/bottom_navigation_my_page"
         android:name="com.example.barrier_free_restaurant.MyPageFragment"
         android:label="MyPageFragment" />
+    <fragment
+        android:id="@+id/bottom_navigation_category"
+        android:name="com.example.barrier_free_restaurant.CategoryFragment"
+        android:label="CategoryFragment" />
+    <fragment
+        android:id="@+id/bottom_navigation_favorite"
+        android:name="com.example.barrier_free_restaurant.FavoriteFragment"
+        android:label="FavoriteFragment" />
 
 </navigation>

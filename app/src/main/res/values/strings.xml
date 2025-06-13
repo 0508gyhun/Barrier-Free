@@ -13,4 +13,6 @@
     <string name="search">search</string>
     <string name="map">map</string>
     <string name="my_page">my page</string>
+    <string name="category">category</string>
+    <string name="favorite">favorite</string>
 </resources>
