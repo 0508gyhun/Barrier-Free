@@ -60,4 +60,5 @@ dependencies {
     implementation(libs.firebase.analytics)
 
     implementation("com.naver.maps:map-sdk:3.21.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 }
