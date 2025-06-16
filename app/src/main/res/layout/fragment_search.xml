@@ -9,8 +9,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:hint="키워드를 검색어를 입력해주세요."
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
+
     <com.google.android.material.search.SearchView
         android:id="@+id/search_view"
         android:layout_width="0dp"
