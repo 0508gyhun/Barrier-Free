@@ -13,4 +13,12 @@
     <string name="search">search</string>
     <string name="map">map</string>
     <string name="my_page">my page</string>
+    <string name="category">category</string>
+    <string name="favorite">favorite</string>
+    <string name="image_restaurant">image_restaurant</string>
+    <string name="info_detail">info_detail</string>
+    <string name="info_accessible">info_accessible</string>
+    <string name="restaurant_call">restaurant_call</string>
+    <string name="restaurant_title">Restaurant title</string>
+    <string name="restaurant_address">restaurant_address</string>
 </resources>
