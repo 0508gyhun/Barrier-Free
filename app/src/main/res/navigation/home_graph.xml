@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/bottom_navigation_search"
-        android:name="com.example.barrier_free_restaurant.SearchFragment"
+        android:name="com.example.barrier_free_restaurant.HomeFragment"
         android:label="SearchFragment" />
     <fragment
         android:id="@+id/bottom_navigation_map"
@@ -22,7 +22,7 @@
         android:label="CategoryFragment" />
     <fragment
         android:id="@+id/bottom_navigation_favorite"
-        android:name="com.example.barrier_free_restaurant.FavoriteFragment"
+        android:name="com.example.barrier_free_restaurant.BookmarkFragment"
         android:label="FavoriteFragment" />
 
 </navigation>
