@@ -60,9 +60,7 @@ class SignInFragment : Fragment() {
             auth.signInWithEmailAndPassword(userId, userPassword).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(), "로그인 성공!", Toast.LENGTH_SHORT).show()
-//                    val sharedPrefs = requireContext().getSharedPreferences("MyAppsPrefs", Context.MODE_PRIVATE)
-//                    sharedPrefs.edit { putBoolean("is_logged", true) }
-                    val intent = Intent(requireContext(),HomeActivity::class.java)
+                    val intent = Intent(requireContext(), HomeActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(requireContext(), "이메일과 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()

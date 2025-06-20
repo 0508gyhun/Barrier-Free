@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
     private fun checkLogIn() {
         val currentUser = FirebaseAuth.getInstance().currentUser
 
-        if(currentUser != null) {
-            val intent = Intent(this,HomeActivity::class.java)
+        if (currentUser != null) {
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
