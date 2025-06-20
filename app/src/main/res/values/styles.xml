@@ -3,4 +3,5 @@
     <style name="AppTitle" parent="TextAppearance.Material3.DisplayMedium">
         <item name="android:textColor">@color/blue</item>
     </style>
+
 </resources>
