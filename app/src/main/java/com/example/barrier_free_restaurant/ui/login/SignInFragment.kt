@@ -1,5 +1,6 @@
 package com.example.barrier_free_restaurant.ui.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.barrier_free_restaurant.HomeActivity
 import com.example.barrier_free_restaurant.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
+import androidx.core.content.edit
 
 class SignInFragment : Fragment() {
 
@@ -19,12 +21,11 @@ class SignInFragment : Fragment() {
 
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,6 +33,11 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnClickListener()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun setOnClickListener() {
@@ -54,17 +60,14 @@ class SignInFragment : Fragment() {
             auth.signInWithEmailAndPassword(userId, userPassword).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(), "로그인 성공!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(requireContext(), HomeActivity::class.java)
+                    val sharedPrefs = requireContext().getSharedPreferences("MyAppsPrefs", Context.MODE_PRIVATE)
+                    sharedPrefs.edit { putBoolean("is_logged", true) }
+                    val intent = Intent(requireContext(),HomeActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(requireContext(), "이메일과 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
