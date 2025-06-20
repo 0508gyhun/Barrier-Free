@@ -37,11 +37,12 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/search_bar">
+
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chip_group"
+            android:id="@+id/chip_group_region"
             android:layout_width="0dp"
             android:layout_height="50dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,8 +56,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/korea"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -65,8 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/seoul"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -75,8 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gyenggi"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -84,9 +85,9 @@
                 style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:checkedIconTint="@color/white"
                 android:text="@string/incheon"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -95,8 +96,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/deagu"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -104,9 +105,9 @@
                 style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:checkedIconTint="@color/white"
                 android:text="@string/gwangju"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -114,9 +115,9 @@
                 style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:checkedIconTint="@color/white"
                 android:text="@string/busan"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -124,9 +125,9 @@
                 style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:checkedIconTint="@color/white"
                 android:text="@string/deajeon"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -135,8 +136,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sejong"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -155,8 +156,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gangwon"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -165,8 +166,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/chungbuk"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -175,8 +176,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/chungnam"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -185,8 +186,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gyeongbuk"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -195,8 +196,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gyeongnam"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -205,8 +206,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jeonbuk"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -215,8 +216,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jeonnam"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
             <com.google.android.material.chip.Chip
@@ -225,14 +226,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jeju"
-                app:checkedIconTint="@color/white"
                 android:textColor="@color/selector_chips_text"
+                app:checkedIconTint="@color/white"
                 app:chipBackgroundColor="@color/selector_chips_background" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
