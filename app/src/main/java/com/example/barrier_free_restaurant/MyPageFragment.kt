@@ -10,6 +10,8 @@ import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.example.barrier_free_restaurant.databinding.FragmentMyPageBinding
 import com.example.barrier_free_restaurant.ui.login.MainActivity
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 
 class MyPageFragment : Fragment() {
 
@@ -41,9 +43,8 @@ class MyPageFragment : Fragment() {
 
     private fun setLogOutButton() {
         binding.btnLogout.setOnClickListener {
-            val sharedPreferences =
-                requireContext().getSharedPreferences("MyAppsPrefs", Context.MODE_PRIVATE)
-            sharedPreferences.edit { putBoolean("is_logged", false) }
+            FirebaseAuth.getInstance().signOut()
+
             val intent =  Intent(requireActivity(), MainActivity::class.java)
             startActivity(intent)
             requireActivity().finish()

@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.barrier_free_restaurant.HomeActivity
 import com.example.barrier_free_restaurant.R
 import com.example.barrier_free_restaurant.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,12 +30,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkLogIn() {
-        val isLoggedIn =
-            getSharedPreferences("MyAppsPrefs", MODE_PRIVATE).getBoolean("is_logged", false)
-        if (isLoggedIn) {
-            val intent = Intent(this, HomeActivity::class.java)
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        if(currentUser != null) {
+            val intent = Intent(this,HomeActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }
