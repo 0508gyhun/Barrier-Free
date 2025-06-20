@@ -18,14 +18,14 @@
             android:name="com.naver.maps.map.NCP_KEY_ID"
             android:value="4f0sk22uzy" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.login.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.MainActivity"/>
+        <activity android:name=".HomeActivity"/>
     </application>
 
 </manifest>

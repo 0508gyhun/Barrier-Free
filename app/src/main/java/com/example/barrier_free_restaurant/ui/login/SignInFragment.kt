@@ -1,5 +1,6 @@
 package com.example.barrier_free_restaurant.ui.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.barrier_free_restaurant.HomeActivity
 import com.example.barrier_free_restaurant.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
+import androidx.core.content.edit
 
 class SignInFragment : Fragment() {
 
@@ -19,12 +21,11 @@ class SignInFragment : Fragment() {
 
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,6 +33,11 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnClickListener()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun setOnClickListener() {
@@ -61,10 +67,5 @@ class SignInFragment : Fragment() {
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

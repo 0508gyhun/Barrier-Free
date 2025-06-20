@@ -37,7 +37,7 @@ class SignUpFragment : Fragment() {
             val userPassword = binding.signupPasswordTextFieldEditText.text.toString()
             registerAuth(userId, userPassword)
         }
-        binding.signupTopAppBar.setNavigationOnClickListener{
+        binding.signupTopAppBar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
     }
