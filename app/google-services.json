@@ -12,12 +12,7 @@
           "package_name": "com.example.barrier_free_restaurant"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "473167035677-pne5epfkfo267ir7m7v6s6kiisc0h112.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyC8iw4qvwgZyyswaC69vNzgiePdfBwptlY"
@@ -25,12 +20,7 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "473167035677-pne5epfkfo267ir7m7v6s6kiisc0h112.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
