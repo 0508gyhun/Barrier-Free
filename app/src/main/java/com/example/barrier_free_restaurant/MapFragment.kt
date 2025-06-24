@@ -1,5 +1,8 @@
 package com.example.barrier_free_restaurant
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,11 +15,13 @@ import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.NaverMap
 import com.naver.maps.map.OnMapReadyCallback
 import com.naver.maps.map.overlay.Marker
+import com.naver.maps.map.overlay.OverlayImage
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import androidx.core.graphics.scale
 
 class MapFragment : Fragment(), OnMapReadyCallback {
 
@@ -79,10 +84,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 if (response.isSuccessful) {
                     val data = response.body()
                     if (data != null) {
-                        // 예시: 받아온 데이터를 로그로 출력
                         Log.d("API_RESPONSE", "불러오기 성공: ${data.toString()}")
                         Toast.makeText(requireActivity(), "데이터 불러오기 성공!", Toast.LENGTH_SHORT).show()
-
                         makeMarker(data)
                     } else {
                         Log.e("API_RESPONSE", "응답은 성공했으나 데이터가 null입니다.")
