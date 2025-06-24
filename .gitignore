@@ -8,3 +8,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/src/main/java/com/example/barrier_free_restaurant/apikey
+app/google-services.json
