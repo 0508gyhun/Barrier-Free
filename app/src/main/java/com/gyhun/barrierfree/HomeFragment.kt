@@ -1,12 +1,11 @@
-package com.example.barrier_free_restaurant
+package com.gyhun.barrierfree
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.barrier_free_restaurant.databinding.FragmentHomeBinding
+import com.gyhun.barrierfree.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

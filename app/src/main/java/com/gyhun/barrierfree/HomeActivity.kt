@@ -1,21 +1,13 @@
-package com.example.barrier_free_restaurant
+package com.gyhun.barrierfree
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.barrier_free_restaurant.databinding.ActivityHomeBinding
-import kotlinx.serialization.Serializer
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
+import com.gyhun.barrierfree.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 

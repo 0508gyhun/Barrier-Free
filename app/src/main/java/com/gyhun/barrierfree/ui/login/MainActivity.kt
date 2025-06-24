@@ -1,4 +1,4 @@
-package com.example.barrier_free_restaurant.ui.login
+package com.gyhun.barrierfree.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.barrier_free_restaurant.HomeActivity
-import com.example.barrier_free_restaurant.R
-import com.example.barrier_free_restaurant.databinding.ActivityMainBinding
+import com.gyhun.barrierfree.HomeActivity
+import com.gyhun.barrierfree.R
+import com.gyhun.barrierfree.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {

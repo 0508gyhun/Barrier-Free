@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.barrier_free_restaurant"
+    namespace = "com.gyhun.barrierfree"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.barrier_free_restaurant"
+        applicationId = "com.gyhun.barrierfree"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

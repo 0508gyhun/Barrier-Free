@@ -1,4 +1,4 @@
-package com.example.barrier_free_restaurant
+package com.gyhun.barrierfree
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

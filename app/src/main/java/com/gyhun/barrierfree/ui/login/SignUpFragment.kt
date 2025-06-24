@@ -1,4 +1,4 @@
-package com.example.barrier_free_restaurant.ui.login
+package com.gyhun.barrierfree.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.barrier_free_restaurant.databinding.FragmentSignUpBinding
+import com.gyhun.barrierfree.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpFragment : Fragment() {

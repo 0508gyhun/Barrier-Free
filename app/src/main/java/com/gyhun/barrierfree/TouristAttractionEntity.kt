@@ -1,4 +1,4 @@
-package com.example.barrier_free_restaurant
+package com.gyhun.barrierfree
 
 import com.google.gson.annotations.SerializedName
 
