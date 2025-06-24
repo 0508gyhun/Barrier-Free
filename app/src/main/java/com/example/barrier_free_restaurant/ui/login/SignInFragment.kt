@@ -13,6 +13,7 @@ import com.example.barrier_free_restaurant.HomeActivity
 import com.example.barrier_free_restaurant.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import androidx.core.content.edit
+import com.example.barrier_free_restaurant.R
 
 class SignInFragment : Fragment() {
 
@@ -55,15 +56,16 @@ class SignInFragment : Fragment() {
 
     private fun signIn(userId: String, userPassword: String) {
         if (userId.isEmpty() || userPassword.isEmpty()) {
-            Toast.makeText(requireContext(), "입력값이 비었습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.input_is_empty), Toast.LENGTH_SHORT).show()
         } else {
             auth.signInWithEmailAndPassword(userId, userPassword).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(requireContext(), "로그인 성공!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(),
+                        getString(R.string.Login_Success), Toast.LENGTH_SHORT).show()
                     val intent = Intent(requireContext(), HomeActivity::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(requireContext(), "이메일과 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.Check_Email_Password), Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -39,4 +39,8 @@
     <string name="gyenggi">경기</string>
     <string name="seoul">서울</string>
     <string name="korea">전국</string>
+    <string name="descripition_please_search_keyword">키워드를 검색어를 입력해주세요.</string>
+    <string name="input_is_empty">입력값이 비었습니다.</string>
+    <string name="Login_Success">로그인 성공!</string>
+    <string name="Check_Email_Password">이메일과 비밀번호를 확인해주세요</string>
 </resources>

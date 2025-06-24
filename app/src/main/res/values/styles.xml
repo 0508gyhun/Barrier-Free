@@ -3,5 +3,9 @@
     <style name="AppTitle" parent="TextAppearance.Material3.DisplayMedium">
         <item name="android:textColor">@color/blue</item>
     </style>
-
+    <style name="ChipStyle" parent="Widget.Material3.Chip.Filter">
+        <item name="android:textColor">@color/selector_chips_text</item>
+        <item name="checkedIconTint">@color/white</item>
+        <item name="chipBackgroundColor">@color/selector_chips_background</item>
+    </style>
 </resources>
