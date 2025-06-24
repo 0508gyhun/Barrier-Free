@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class TouristAttractionEntity(
     @SerializedName("response")
-    val response : TourResponse
+    val response: TourResponse
 )
 
 data class TourResponse(
@@ -33,32 +33,30 @@ data class TourItems(
 
 data class TourEntity(
     @SerializedName("addr1")
-    var address : String,
+    var address: String,
 
     @SerializedName("areacode")
-    val areaCode : String,
+    val areaCode: String,
     @SerializedName("sigungucode")
-    val sigunguCode : String,
+    val sigunguCode: String,
     @SerializedName("firstimage")
-    var imageUrl1 : String,
+    var imageUrl1: String,
     @SerializedName("firstimage2")
     var imageUrl2: String,
 
     @SerializedName("contentid")
-    val contentId : String,
+    val contentId: String,
     @SerializedName("contenttypeid")
-    val contentTypeId : String,
+    val contentTypeId: String,
 
     @SerializedName("mapx")
-    val mapX : String,
+    val mapX: String,
     @SerializedName("mapy")
-    val mapY : String,
+    val mapY: String,
     @SerializedName("modifiedtime")
-    val modifiedTime : String,
+    val modifiedTime: String,
     @SerializedName("tel")
-    var tel : String,
+    var tel: String,
     @SerializedName("title")
-    var title : String
-
-
+    var title: String
 )

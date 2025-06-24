@@ -5,7 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface BarrierFreeService {
-//numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=C&_type=json&contentTypeId=12
     @GET("areaBasedList2?&numOfRows=100000&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=C&_type=json&contentTypeId=12")
     fun getAllTouristAttraction(
         @Query("serviceKey") serviceKey: String,
