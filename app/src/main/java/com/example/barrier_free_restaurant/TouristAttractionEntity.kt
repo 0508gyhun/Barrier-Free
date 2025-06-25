@@ -33,22 +33,19 @@ data class TourItems(
 
 data class TourEntity(
     @SerializedName("addr1")
-    var address: String,
-
+    val address: String,
     @SerializedName("areacode")
     val areaCode: String,
     @SerializedName("sigungucode")
     val sigunguCode: String,
     @SerializedName("firstimage")
-    var imageUrl1: String,
+    val imageUrl1: String,
     @SerializedName("firstimage2")
-    var imageUrl2: String,
-
+    val imageUrl2: String,
     @SerializedName("contentid")
     val contentId: String,
     @SerializedName("contenttypeid")
     val contentTypeId: String,
-
     @SerializedName("mapx")
     val mapX: String,
     @SerializedName("mapy")
@@ -56,7 +53,7 @@ data class TourEntity(
     @SerializedName("modifiedtime")
     val modifiedTime: String,
     @SerializedName("tel")
-    var tel: String,
+    val tel: String,
     @SerializedName("title")
-    var title: String
+    val title: String
 )
