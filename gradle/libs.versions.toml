@@ -16,6 +16,8 @@ navigationUi = "2.9.0"
 firebaseAuth = "23.2.1"
 playServicesLocation = "21.0.1"
 retrofit = "3.0.0"
+google = "4.4.2"
+safeArg = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,4 +41,5 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+google-service = {id = "com.google.gms.google-services", version.ref = "google"}
+navigation-safe-arg = {id = "androidx.navigation.safeargs.kotlin", version.ref = "safeArg"}
