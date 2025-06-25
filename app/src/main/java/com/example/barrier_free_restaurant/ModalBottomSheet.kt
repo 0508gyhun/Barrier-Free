@@ -12,7 +12,7 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.modal_bottom_sheet,container,false)
+    ): View? = inflater.inflate(R.layout.modal_bottom_sheet, container, false)
 
     companion object {
         const val TAG = "ModalBottomSheet"

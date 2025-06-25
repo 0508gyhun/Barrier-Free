@@ -44,8 +44,7 @@ class MyPageFragment : Fragment() {
     private fun setLogOutButton() {
         binding.btnLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-
-            val intent =  Intent(requireActivity(), MainActivity::class.java)
+            val intent = Intent(requireActivity(), MainActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
         }
