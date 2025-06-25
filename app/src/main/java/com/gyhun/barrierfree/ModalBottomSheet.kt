@@ -1,4 +1,4 @@
-package com.example.barrier_free_restaurant
+package com.gyhun.barrierfree
 
 import android.os.Bundle
 import android.view.LayoutInflater

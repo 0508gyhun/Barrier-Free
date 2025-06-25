@@ -1,4 +1,4 @@
-package com.example.barrier_free_restaurant
+package com.gyhun.barrierfree
 
 import retrofit2.Call
 import retrofit2.http.GET
