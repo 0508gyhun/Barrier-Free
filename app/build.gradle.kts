@@ -1,9 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.gms.google-services")
-    id("androidx.navigation.safeargs.kotlin")
-
+    alias(libs.plugins.google.service)
+    alias(libs.plugins.androidx.navigation.safe.args.kotlin)
 }
 
 android {
@@ -59,10 +58,10 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
-    implementation("com.naver.maps:map-sdk:3.21.0")
-    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation(libs.map.sdk)
+    implementation(libs.play.services.location)
 
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
 }
