@@ -31,7 +31,7 @@ class ImageSliderAdapter(private val items: List<PagerItem>) :
 
         fun bind(pagerItem: PagerItem) {
             binding.tvBarrierFreeTitle.text = pagerItem.title
-            binding.tvBarrierfreeAddress.text = pagerItem.address
+            binding.tvBarrierFreeAddress.text = pagerItem.address
             Glide
                 .with(binding.ivHomeRecommendation)
                 .load(pagerItem.imageUrl)

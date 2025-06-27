@@ -51,4 +51,8 @@
     <string name="description_today_barrierfree_recommendation">오늘의 베리어프리 명소 추천</string>
     <string name="see_more">더보기</string>
     <string name="today_tourist_attraction_recommendation">오늘의 베리어프리 관광지 추천</string>
+    <string name="image_recommendation">image_recommendation</string>
+    <string name="today_cultural_facility_recommendation">오늘의 베리어프리 문화시설 추천</string>
+    <string name="temp_address">경기도 고양시 백범로 25길 63</string>
+    <string name="temp_title">안녕하세요</string>
 </resources>
