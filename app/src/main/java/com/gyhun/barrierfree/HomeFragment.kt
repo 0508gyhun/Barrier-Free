@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
 import androidx.fragment.app.Fragment
 import com.gyhun.barrierfree.databinding.FragmentHomeBinding
 
@@ -27,9 +26,10 @@ class HomeFragment : Fragment() {
 
         val data = setDummyData()
         binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data)
-        binding.rvTouristAttractionRecommendation.adapter = TouristAttractionAdapter(data)
-        binding.rvCulturalFacilityRecommendation.adapter = TouristAttractionAdapter(data)
-        binding.rvAccommodationRecommendation.adapter = TouristAttractionAdapter(data)
+        binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data)
+        binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data)
+        binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data)
+        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data)
     }
 
     override fun onDestroyView() {

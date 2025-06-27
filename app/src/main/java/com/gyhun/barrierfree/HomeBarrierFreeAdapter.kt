@@ -6,24 +6,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gyhun.barrierfree.databinding.ItemRecyclerViewBinding
 
-class TouristAttractionAdapter(private val items: List<PagerItem>) :
-    RecyclerView.Adapter<TouristAttractionAdapter.TouristAttractionViewHolder>() {
+class HomeBarrierFreeAdapter(private val items: List<PagerItem>) :
+    RecyclerView.Adapter<HomeBarrierFreeAdapter.HomeBarrierFreeViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TouristAttractionViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBarrierFreeViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemRecyclerViewBinding.inflate(inflater,parent,false)
-        return TouristAttractionViewHolder(binding)
+        return HomeBarrierFreeViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    override fun onBindViewHolder(holder: TouristAttractionViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeBarrierFreeViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
-    class TouristAttractionViewHolder(private val binding: ItemRecyclerViewBinding) :
+    class HomeBarrierFreeViewHolder(private val binding: ItemRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(pagerItem: PagerItem) {
