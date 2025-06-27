@@ -29,6 +29,7 @@ class HomeFragment : Fragment() {
         binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data)
         binding.rvTouristAttractionRecommendation.adapter = TouristAttractionAdapter(data)
         binding.rvCulturalFacilityRecommendation.adapter = TouristAttractionAdapter(data)
+        binding.rvAccommodationRecommendation.adapter = TouristAttractionAdapter(data)
     }
 
     override fun onDestroyView() {
