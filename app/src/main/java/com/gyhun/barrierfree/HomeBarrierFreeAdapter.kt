@@ -11,7 +11,7 @@ class HomeBarrierFreeAdapter(private val items: List<PagerItem>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBarrierFreeViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemRecyclerViewBinding.inflate(inflater,parent,false)
+        val binding = ItemRecyclerViewBinding.inflate(inflater, parent, false)
         return HomeBarrierFreeViewHolder(binding)
     }
 
