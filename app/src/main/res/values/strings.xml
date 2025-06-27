@@ -43,4 +43,12 @@
     <string name="input_is_empty">입력값이 비었습니다.</string>
     <string name="Login_Success">로그인 성공!</string>
     <string name="Check_Email_Password">이메일과 비밀번호를 확인해주세요</string>
+    <string name="ic_appbar_menu">ic_appbar_menu</string>
+    <string name="app_name_kor">베리어프리</string>
+    <string name="description_image_barrier_free">description_image_barrier_free</string>
+    <string name="barrier_free_title">barrier_free_title</string>
+    <string name="barrier_free_address">barrier_free_address</string>
+    <string name="description_today_barrierfree_recommendation">오늘의 베리어프리 명소 추천</string>
+    <string name="see_more">더보기</string>
+    <string name="today_tourist_attraction_recommendation">오늘의 베리어프리 관광지 추천</string>
 </resources>
