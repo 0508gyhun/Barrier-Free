@@ -10,7 +10,6 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="welcome_to_create_account">Welcome to create account</string>
-    <string name="search">search</string>
     <string name="map">map</string>
     <string name="my_page">my page</string>
     <string name="category">category</string>
@@ -57,4 +56,5 @@
     <string name="temp_title">안녕하세요</string>
     <string name="today_accommodation_recommendation">오늘의 베리어프리 숙박시설 추천</string>
     <string name="today_food_recommendation">오늘의 베리어프리 음식점 추천</string>
+    <string name="home">home</string>
 </resources>
