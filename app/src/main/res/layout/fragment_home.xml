@@ -105,8 +105,43 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_recommend_tourist_attraction"
-                app:spanCount="2"
-                tools:listitem="@layout/item_recycler_view" />
+                app:spanCount="2" />
+
+            <TextView
+                android:id="@+id/tv_recommend_cultural_facility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/today_cultural_facility_recommendation"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_tourist_attraction_recommendation" />
+
+            <TextView
+                android:id="@+id/tv_recommend_cultural_facility_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="14dp"
+                android:text="@string/see_more"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_recommend_cultural_facility"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_recommend_cultural_facility" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cultural_facility_recommendation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend_cultural_facility"
+                app:spanCount="2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

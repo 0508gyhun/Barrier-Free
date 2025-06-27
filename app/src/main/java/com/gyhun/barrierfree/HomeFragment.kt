@@ -28,6 +28,7 @@ class HomeFragment : Fragment() {
         val data = setDummyData()
         binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data)
         binding.rvTouristAttractionRecommendation.adapter = TouristAttractionAdapter(data)
+        binding.rvCulturalFacilityRecommendation.adapter = TouristAttractionAdapter(data)
     }
 
     override fun onDestroyView() {
