@@ -25,11 +25,34 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val data = setDummyData()
-        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data)
+
+        val homeActivity = requireActivity() as? HomeActivity
+        val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
+
+        if (isTabletLayout) {
+            binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
+                pagerItem?.let { item ->
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.extend_Fragment_container_home_detail, DetailFragment(item))
+                        .addToBackStack(null)
+                        .commit()
+                }
+            }
+        } else {
+            binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data, null)
+        }
+
+        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.extend_Fragment_container_home_detail, DetailFragment(pagerItem))
+                .commit()
+        }
         binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data)
         binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data)
         binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data)
         binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data)
+
+
     }
 
     override fun onDestroyView() {
