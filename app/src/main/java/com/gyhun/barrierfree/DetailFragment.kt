@@ -46,6 +46,17 @@ class DetailFragment() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setLayout()
+        setNavigationIconClickListener()
+    }
+
+    private fun setNavigationIconClickListener() {
+        binding.homeToolBar.setNavigationOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+    }
+
+    private fun setLayout() {
         pagerItem?.let { item ->
             binding.tvDetailBasicInfoTitle.text = item.title
             binding.tvDetailBasicInfoAddress.text = item.address
@@ -54,12 +65,7 @@ class DetailFragment() : Fragment() {
                 .load(item.imageUrl)
                 .into(binding.ivDetail)
         }
-
-        binding.homeToolBar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

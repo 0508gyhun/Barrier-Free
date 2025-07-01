@@ -1,7 +1,6 @@
 package com.gyhun.barrierfree
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,42 +30,71 @@ class HomeFragment : Fragment() {
         val homeActivity = requireActivity() as? HomeActivity
         val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
 
-
-
         if (isTabletLayout) {
-            binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
-                val detailFragment = DetailFragment().apply {
-                    arguments = Bundle().apply {
-                        putParcelable("item", pagerItem)
-                    }
-                }
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.extend_Fragment_container_home_detail, detailFragment)
-                    .addToBackStack("detail")
-                    .commit()
-            }
+            setAdapterTablet(data)
         } else {
-            binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
-                pagerItem.let { item ->
-                    val action =
-                        HomeFragmentDirections.actionBottomNavigationHomeToDetailFragment(item)
-                    findNavController().navigate(action)
-                }
-            }
+            setAdapterPhone(data)
         }
-
-
-        binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data)
-        binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data)
-        binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data)
-        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data)
-
-
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun setAdapterPhone(data: List<PagerItem>) {
+        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
+            navigateToDetailFragmentPhone(pagerItem)
+        }
+        binding.rvTouristAttractionRecommendation.adapter =
+            HomeBarrierFreeAdapter(data) { pagerItem ->
+                navigateToDetailFragmentPhone(pagerItem)
+            }
+        binding.rvCulturalFacilityRecommendation.adapter =
+            HomeBarrierFreeAdapter(data) { pagerItem ->
+                navigateToDetailFragmentPhone(pagerItem)
+            }
+        binding.rvAccommodationRecommendation.adapter =
+            HomeBarrierFreeAdapter(data) { pagerItem ->
+                navigateToDetailFragmentPhone(pagerItem)
+            }
+        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data) { pagerItem ->
+            navigateToDetailFragmentPhone(pagerItem)
+        }
+    }
+
+    private fun setAdapterTablet(data: List<PagerItem>) {
+        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
+            navigateToDetailFragmentTablet(pagerItem)
+        }
+        binding.rvTouristAttractionRecommendation.adapter =
+            HomeBarrierFreeAdapter(data) { pagerItem ->
+                navigateToDetailFragmentTablet(pagerItem)
+            }
+        binding.rvCulturalFacilityRecommendation.adapter =
+            HomeBarrierFreeAdapter(data) { pagerItem ->
+                navigateToDetailFragmentTablet(pagerItem)
+            }
+        binding.rvAccommodationRecommendation.adapter =
+            HomeBarrierFreeAdapter(data) { pagerItem ->
+                navigateToDetailFragmentTablet(pagerItem)
+            }
+        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data) { pagerItem ->
+            navigateToDetailFragmentTablet(pagerItem)
+        }
+    }
+
+    private fun navigateToDetailFragmentPhone(item: PagerItem) {
+        val action =
+            HomeFragmentDirections.actionBottomNavigationHomeToDetailFragment(item)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToDetailFragmentTablet(pagerItem: PagerItem) {
+        val detailFragment = DetailFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable("item", pagerItem)
+            }
+        }
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.extend_Fragment_container_home_detail, detailFragment)
+            .addToBackStack("detail")
+            .commit()
     }
 
     private fun setDummyData(): List<PagerItem> {
@@ -77,5 +105,10 @@ class HomeFragment : Fragment() {
             PagerItem("https://i.imgur.com/rhpC3OB.png", "제천시장", "충북 제천 구리시 이천면 멍멍"),
         )
         return data
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

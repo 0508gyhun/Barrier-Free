@@ -19,16 +19,17 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        connectNavigationAndNavController()
+        setBackPressed()
+    }
+
+    private fun connectNavigationAndNavController() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.homeNavHostFragment.id) as NavHostFragment
         val navController = navHostFragment.findNavController()
 
         binding.homeBottomNavigation?.setupWithNavController(navController)
         binding.extendNavigationRail?.setupWithNavController(navController)
-
-
-        setBackPressed()
-
     }
 
     private fun setBackPressed() {
@@ -42,10 +43,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 backPressedTime = System.currentTimeMillis()
             }
-        }
-
-
-        )
+        })
     }
-
 }

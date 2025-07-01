@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gyhun.barrierfree.databinding.ItemRecyclerViewBinding
 
-class HomeBarrierFreeAdapter(private val items: List<PagerItem>) :
+class HomeBarrierFreeAdapter(
+    private val items: List<PagerItem>,
+    private val onItemClick: ((PagerItem) -> Unit)?
+) :
     RecyclerView.Adapter<HomeBarrierFreeAdapter.HomeBarrierFreeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBarrierFreeViewHolder {
@@ -23,12 +26,17 @@ class HomeBarrierFreeAdapter(private val items: List<PagerItem>) :
         holder.bind(items[position])
     }
 
-    class HomeBarrierFreeViewHolder(private val binding: ItemRecyclerViewBinding) :
+    inner class HomeBarrierFreeViewHolder(private val binding: ItemRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(pagerItem: PagerItem) {
             binding.tvTitleRecommendation.text = pagerItem.title
             binding.tvAddressRecommendation.text = pagerItem.address
+            onItemClick?.let { clickListener ->
+                binding.root.setOnClickListener {
+                    clickListener(pagerItem)
+                }
+            }
             Glide
                 .with(binding.ivRecommendation)
                 .load(pagerItem.imageUrl)
