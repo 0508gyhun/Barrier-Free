@@ -36,5 +36,9 @@
             android:name="pagerItem"
             app:argType="com.gyhun.barrierfree.PagerItem" />
     </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.gyhun.barrierfree.HomeActivity"
+        android:label="HomeActivity" />
 
 </navigation>

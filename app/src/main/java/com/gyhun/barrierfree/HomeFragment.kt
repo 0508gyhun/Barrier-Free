@@ -86,15 +86,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToDetailFragmentTablet(pagerItem: PagerItem) {
-        val detailFragment = DetailFragment().apply {
-            arguments = Bundle().apply {
-                putParcelable("item", pagerItem)
-            }
-        }
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.extend_Fragment_container_home_detail, detailFragment)
-            .addToBackStack("detail")
-            .commit()
+        val navController =
+            requireActivity().supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment_detail)
+                ?.findNavController()
+        val action = DetailGraphDirections.actionGlobalDetailFragment(pagerItem)
+        navController?.navigate(action)
     }
 
     private fun setDummyData(): List<PagerItem> {

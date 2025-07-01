@@ -57,7 +57,8 @@ class DetailFragment() : Fragment() {
 
     private fun setNavigationIconClickListener() {
         binding.homeToolBar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack()
+            val action = DetailFragmentDirections.actionDetailFragmentToEmptyFragment()
+            findNavController().navigate(action)
         }
     }
 
