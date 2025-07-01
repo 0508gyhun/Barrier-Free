@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gyhun.barrierfree.databinding.ItemRecyclerViewBinding
+import com.gyhun.barrierfree.extensions.loadUrl
 
 class HomeBarrierFreeAdapter(
     private val items: List<PagerItem>,
@@ -32,15 +33,12 @@ class HomeBarrierFreeAdapter(
         fun bind(pagerItem: PagerItem) {
             binding.tvTitleRecommendation.text = pagerItem.title
             binding.tvAddressRecommendation.text = pagerItem.address
+            binding.ivRecommendation.loadUrl(pagerItem.imageUrl)
             onItemClick?.let { clickListener ->
                 binding.root.setOnClickListener {
                     clickListener(pagerItem)
                 }
             }
-            Glide
-                .with(binding.ivRecommendation)
-                .load(pagerItem.imageUrl)
-                .into(binding.ivRecommendation)
         }
     }
 }

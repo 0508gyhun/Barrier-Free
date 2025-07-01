@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.gyhun.barrierfree.databinding.FragmentDetailBinding
+import com.gyhun.barrierfree.extensions.loadUrl
 
 class DetailFragment() : Fragment() {
 
@@ -22,16 +23,7 @@ class DetailFragment() : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        pagerItem = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            arguments?.getParcelable("item", PagerItem::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            arguments?.getParcelable("item") as? PagerItem
-        }
-
-        if (pagerItem == null) {
-            pagerItem = args.pagerItem
-        }
+        setPagerItem()
     }
 
     override fun onCreateView(
@@ -50,6 +42,19 @@ class DetailFragment() : Fragment() {
         setNavigationIconClickListener()
     }
 
+    private fun setPagerItem() {
+        pagerItem = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arguments?.getParcelable("item", PagerItem::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            arguments?.getParcelable("item") as? PagerItem
+        }
+
+        if (pagerItem == null) {
+            pagerItem = args.pagerItem
+        }
+    }
+
     private fun setNavigationIconClickListener() {
         binding.homeToolBar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack()
@@ -60,10 +65,7 @@ class DetailFragment() : Fragment() {
         pagerItem?.let { item ->
             binding.tvDetailBasicInfoTitle.text = item.title
             binding.tvDetailBasicInfoAddress.text = item.address
-            Glide
-                .with(binding.ivDetail)
-                .load(item.imageUrl)
-                .into(binding.ivDetail)
+            binding.ivDetail.loadUrl(item.imageUrl)
         }
     }
 
