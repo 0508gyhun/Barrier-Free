@@ -15,15 +15,12 @@ import com.gyhun.barrierfree.extensions.loadUrl
 class DetailFragment() : Fragment() {
 
     private val args: DetailFragmentArgs by navArgs()
-    private var pagerItem: PagerItem? = null
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setPagerItem()
     }
 
     override fun onCreateView(
@@ -42,31 +39,27 @@ class DetailFragment() : Fragment() {
         setNavigationIconClickListener()
     }
 
-    private fun setPagerItem() {
-        pagerItem = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            arguments?.getParcelable("item", PagerItem::class.java)
-        } else {
-            @Suppress("DEPRECATION")
-            arguments?.getParcelable("item") as? PagerItem
-        }
-
-        if (pagerItem == null) {
-            pagerItem = args.pagerItem
+    private fun setNavigationIconClickListener() {
+        binding.homeToolBar.setNavigationOnClickListener {
+            if (isTablet()) {
+                val action = DetailFragmentDirections.actionDetailFragmentToEmptyFragment()
+                findNavController().navigate(action)
+            } else {
+                findNavController().navigateUp()
+            }
         }
     }
 
-    private fun setNavigationIconClickListener() {
-        binding.homeToolBar.setNavigationOnClickListener {
-            val action = DetailFragmentDirections.actionDetailFragmentToEmptyFragment()
-            findNavController().navigate(action)
-        }
+    private fun isTablet(): Boolean {
+        val homeActivity = requireActivity() as? HomeActivity
+        return homeActivity?.binding?.extendNavigationRail != null
     }
 
     private fun setLayout() {
-        pagerItem?.let { item ->
-            binding.tvDetailBasicInfoTitle.text = item.title
-            binding.tvDetailBasicInfoAddress.text = item.address
-            binding.ivDetail.loadUrl(item.imageUrl)
+        args.let { item ->
+            binding.tvDetailBasicInfoTitle.text = args.pagerItem.title
+            binding.tvDetailBasicInfoAddress.text = args.pagerItem.address
+            binding.ivDetail.loadUrl(args.pagerItem.imageUrl)
         }
     }
 
