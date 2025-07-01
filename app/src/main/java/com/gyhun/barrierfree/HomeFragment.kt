@@ -27,8 +27,7 @@ class HomeFragment : Fragment() {
 
         val data = setDummyData()
 
-        val homeActivity = requireActivity() as? HomeActivity
-        val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
+        val isTabletLayout = isTablet()
 
         if (isTabletLayout) {
             setAdapterTablet(data)
@@ -37,46 +36,33 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun isTablet(): Boolean {
+        val homeActivity = requireActivity() as? HomeActivity
+        val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
+        return isTabletLayout
+    }
+
     private fun setAdapterPhone(data: List<PagerItem>) {
-        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
-            navigateToDetailFragmentPhone(pagerItem)
-        }
-        binding.rvTouristAttractionRecommendation.adapter =
-            HomeBarrierFreeAdapter(data) { pagerItem ->
-                navigateToDetailFragmentPhone(pagerItem)
-            }
-        binding.rvCulturalFacilityRecommendation.adapter =
-            HomeBarrierFreeAdapter(data) { pagerItem ->
-                navigateToDetailFragmentPhone(pagerItem)
-            }
-        binding.rvAccommodationRecommendation.adapter =
-            HomeBarrierFreeAdapter(data) { pagerItem ->
-                navigateToDetailFragmentPhone(pagerItem)
-            }
-        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data) { pagerItem ->
+        setHomeRecommendationAdapters(data) { pagerItem ->
             navigateToDetailFragmentPhone(pagerItem)
         }
     }
 
     private fun setAdapterTablet(data: List<PagerItem>) {
-        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
+        setHomeRecommendationAdapters(data) { pagerItem ->
             navigateToDetailFragmentTablet(pagerItem)
         }
-        binding.rvTouristAttractionRecommendation.adapter =
-            HomeBarrierFreeAdapter(data) { pagerItem ->
-                navigateToDetailFragmentTablet(pagerItem)
-            }
-        binding.rvCulturalFacilityRecommendation.adapter =
-            HomeBarrierFreeAdapter(data) { pagerItem ->
-                navigateToDetailFragmentTablet(pagerItem)
-            }
-        binding.rvAccommodationRecommendation.adapter =
-            HomeBarrierFreeAdapter(data) { pagerItem ->
-                navigateToDetailFragmentTablet(pagerItem)
-            }
-        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data) { pagerItem ->
-            navigateToDetailFragmentTablet(pagerItem)
-        }
+    }
+
+    private fun setHomeRecommendationAdapters(
+        data: List<PagerItem>,
+        onClick: (PagerItem) -> Unit
+    ) {
+        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data, onClick)
+        binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+        binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+        binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
     }
 
     private fun navigateToDetailFragmentPhone(item: PagerItem) {
