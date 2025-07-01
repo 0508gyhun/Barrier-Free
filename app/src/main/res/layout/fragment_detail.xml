@@ -27,9 +27,60 @@
         android:id="@+id/iv_detail"
         android:layout_width="0dp"
         android:layout_height="400dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:contentDescription="@string/image_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_app_bar" />
+
+    <TextView
+        android:id="@+id/tv_detail_basic_info"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/basic_info"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/iv_detail"
+        app:layout_constraintStart_toStartOf="@id/iv_detail"
+        app:layout_constraintTop_toBottomOf="@id/iv_detail" />
+
+    <TextView
+        android:id="@+id/tv_detail_basic_info_title"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/basic_info_title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_basic_info" />
+
+    <TextView
+        android:id="@+id/tv_detail_basic_info_address_description"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/description_basic_info_address"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_basic_info_title" />
+
+    <TextView
+        android:id="@+id/tv_detail_basic_info_address"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/temporary_address"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_detail_basic_info_address_description"
+        app:layout_constraintTop_toTopOf="@id/tv_detail_basic_info_address_description" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

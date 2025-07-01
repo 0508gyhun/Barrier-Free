@@ -45,3 +45,4 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-service = { id = "com.google.gms.google-services", version.ref = "google" }
 androidx-navigation-safe-args-kotlin = { id = "androidx.navigation.safeargs.kotlin" }
+kotlin-parcelize = { id = "kotlin-parcelize" }

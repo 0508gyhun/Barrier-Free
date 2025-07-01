@@ -1,13 +1,20 @@
 package com.gyhun.barrierfree
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.gyhun.barrierfree.databinding.FragmentDetailBinding
 
-class DetailFragment(private val pagerItem: PagerItem?) : Fragment() {
+class DetailFragment() : Fragment() {
+
+    private val args: DetailFragmentArgs by navArgs()
+    private var pagerItem: PagerItem? = null
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
@@ -15,6 +22,16 @@ class DetailFragment(private val pagerItem: PagerItem?) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        pagerItem = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arguments?.getParcelable("item", PagerItem::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            arguments?.getParcelable("item") as? PagerItem
+        }
+
+        if (pagerItem == null) {
+            pagerItem = args.pagerItem
+        }
     }
 
     override fun onCreateView(
@@ -28,6 +45,19 @@ class DetailFragment(private val pagerItem: PagerItem?) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        pagerItem?.let { item ->
+            binding.tvDetailBasicInfoTitle.text = item.title
+            binding.tvDetailBasicInfoAddress.text = item.address
+            Glide
+                .with(binding.ivDetail)
+                .load(item.imageUrl)
+                .into(binding.ivDetail)
+        }
+
+        binding.homeToolBar.setNavigationOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
     }
 
 

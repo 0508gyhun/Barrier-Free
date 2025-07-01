@@ -1,10 +1,12 @@
 package com.gyhun.barrierfree
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.gyhun.barrierfree.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -29,24 +31,31 @@ class HomeFragment : Fragment() {
         val homeActivity = requireActivity() as? HomeActivity
         val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
 
+
+
         if (isTabletLayout) {
             binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
-                pagerItem?.let { item ->
-                    requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.extend_Fragment_container_home_detail, DetailFragment(item))
-                        .addToBackStack(null)
-                        .commit()
+                val detailFragment = DetailFragment().apply {
+                    arguments = Bundle().apply {
+                        putParcelable("item", pagerItem)
+                    }
                 }
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.extend_Fragment_container_home_detail, detailFragment)
+                    .addToBackStack("detail")
+                    .commit()
             }
         } else {
-            binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data, null)
+            binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
+                pagerItem.let { item ->
+                    val action =
+                        HomeFragmentDirections.actionBottomNavigationHomeToDetailFragment(item)
+                    findNavController().navigate(action)
+                }
+            }
         }
 
-        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data) { pagerItem ->
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.extend_Fragment_container_home_detail, DetailFragment(pagerItem))
-                .commit()
-        }
+
         binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data)
         binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data)
         binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data)
