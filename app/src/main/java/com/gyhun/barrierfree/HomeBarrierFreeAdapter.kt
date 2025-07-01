@@ -16,7 +16,7 @@ class HomeBarrierFreeAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBarrierFreeViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemRecyclerViewBinding.inflate(inflater, parent, false)
-        return HomeBarrierFreeViewHolder(binding)
+        return HomeBarrierFreeViewHolder(binding, onItemClick)
     }
 
     override fun getItemCount(): Int {
@@ -27,7 +27,10 @@ class HomeBarrierFreeAdapter(
         holder.bind(items[position])
     }
 
-    inner class HomeBarrierFreeViewHolder(private val binding: ItemRecyclerViewBinding) :
+    class HomeBarrierFreeViewHolder(
+        private val binding: ItemRecyclerViewBinding,
+        private val onItemClick: ((PagerItem) -> Unit)?
+    ) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(pagerItem: PagerItem) {

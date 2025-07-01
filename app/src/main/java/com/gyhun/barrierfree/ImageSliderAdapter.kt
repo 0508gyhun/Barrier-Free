@@ -18,7 +18,7 @@ class ImageSliderAdapter(
     ): ImageViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemHomeViewPagerBinding.inflate(inflater, parent, false)
-        return ImageViewHolder(binding)
+        return ImageViewHolder(binding, onItemClick)
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
@@ -29,7 +29,10 @@ class ImageSliderAdapter(
         return items.size
     }
 
-    inner class ImageViewHolder(private val binding: ItemHomeViewPagerBinding) :
+    inner class ImageViewHolder(
+        private val binding: ItemHomeViewPagerBinding,
+        private val onItemClick: ((PagerItem) -> Unit)?
+    ) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(pagerItem: PagerItem) {
