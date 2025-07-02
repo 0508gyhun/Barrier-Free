@@ -2,7 +2,6 @@ package com.gyhun.barrierfree
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gyhun.barrierfree.databinding.ItemHomeViewPagerBinding
