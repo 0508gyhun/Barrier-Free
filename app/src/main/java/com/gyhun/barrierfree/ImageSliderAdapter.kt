@@ -3,7 +3,7 @@ package com.gyhun.barrierfree
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil3.load
 import com.gyhun.barrierfree.databinding.ItemHomeViewPagerBinding
 
 class ImageSliderAdapter(
@@ -34,15 +34,12 @@ class ImageSliderAdapter(
         fun bind(pagerItem: PagerItem, onItemClick: ((PagerItem) -> Unit)?) {
             binding.tvBarrierFreeTitle.text = pagerItem.title
             binding.tvBarrierFreeAddress.text = pagerItem.address
+            binding.ivHomeRecommendation.load(pagerItem.imageUrl)
             onItemClick?.let { clickListener ->
                 binding.root.setOnClickListener {
                     clickListener(pagerItem)
                 }
             }
-            Glide
-                .with(binding.ivHomeRecommendation)
-                .load(pagerItem.imageUrl)
-                .into(binding.ivHomeRecommendation)
         }
     }
 }

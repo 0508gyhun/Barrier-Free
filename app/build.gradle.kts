@@ -65,5 +65,6 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    implementation(libs.glide)
+    implementation(libs.coil)
+    implementation(libs.coil3.coil.network.okhttp)
 }

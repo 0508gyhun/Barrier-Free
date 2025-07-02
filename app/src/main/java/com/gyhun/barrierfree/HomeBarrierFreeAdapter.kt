@@ -3,9 +3,8 @@ package com.gyhun.barrierfree
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil3.load
 import com.gyhun.barrierfree.databinding.ItemRecyclerViewBinding
-import com.gyhun.barrierfree.extensions.loadUrl
 
 class HomeBarrierFreeAdapter(
     private val items: List<PagerItem>,
@@ -35,7 +34,7 @@ class HomeBarrierFreeAdapter(
         fun bind(pagerItem: PagerItem, onItemClick: ((PagerItem) -> Unit)?) {
             binding.tvTitleRecommendation.text = pagerItem.title
             binding.tvAddressRecommendation.text = pagerItem.address
-            binding.ivRecommendation.loadUrl(pagerItem.imageUrl)
+            binding.ivRecommendation.load(pagerItem.imageUrl)
             onItemClick?.let { clickListener ->
                 binding.root.setOnClickListener {
                     clickListener(pagerItem)

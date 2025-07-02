@@ -1,6 +1,5 @@
 package com.gyhun.barrierfree
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.bumptech.glide.Glide
+import coil3.load
 import com.gyhun.barrierfree.databinding.FragmentDetailBinding
-import com.gyhun.barrierfree.extensions.loadUrl
 
 class DetailFragment() : Fragment() {
 
@@ -59,7 +57,7 @@ class DetailFragment() : Fragment() {
         args.let { item ->
             binding.tvDetailBasicInfoTitle.text = args.pagerItem.title
             binding.tvDetailBasicInfoAddress.text = args.pagerItem.address
-            binding.ivDetail.loadUrl(args.pagerItem.imageUrl)
+            binding.ivDetail.load(args.pagerItem.imageUrl)
         }
     }
 
