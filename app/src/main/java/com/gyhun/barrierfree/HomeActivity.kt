@@ -11,7 +11,7 @@ import com.gyhun.barrierfree.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHomeBinding
+    lateinit var binding: ActivityHomeBinding
     private var backPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,13 +19,17 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        connectNavigationAndNavController()
+        setBackPressed()
+    }
+
+    private fun connectNavigationAndNavController() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.homeNavHostFragment.id) as NavHostFragment
         val navController = navHostFragment.findNavController()
-        binding.homeBottomNavigation.setupWithNavController(navController)
 
-        setBackPressed()
-
+        binding.homeBottomNavigation?.setupWithNavController(navController)
+        binding.extendNavigationRail?.setupWithNavController(navController)
     }
 
     private fun setBackPressed() {
@@ -39,10 +43,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 backPressedTime = System.currentTimeMillis()
             }
-        }
-
-
-        )
+        })
     }
-
 }

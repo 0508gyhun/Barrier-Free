@@ -39,12 +39,12 @@
 
             <TextView
                 android:id="@+id/tv_recommend_today_barrier_free"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/description_today_barrierfree_recommendation"
-                android:textAppearance="@style/TextAppearance.Material3.TitleMedium.Bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +139,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_accommodation"
-                style="@style/TextAppearance.Material3.TitleMedium"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -210,3 +210,4 @@
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

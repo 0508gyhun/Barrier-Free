@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.service)
     alias(libs.plugins.androidx.navigation.safe.args.kotlin)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {

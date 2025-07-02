@@ -57,4 +57,11 @@
     <string name="today_accommodation_recommendation">오늘의 베리어프리 숙박시설 추천</string>
     <string name="today_food_recommendation">오늘의 베리어프리 음식점 추천</string>
     <string name="home">home</string>
+    <string name="image_detail">image_detail</string>
+    <string name="description_detail_layout">상세화면!</string>
+    <string name="detail_fragment_layout">상세화면</string>
+    <string name="basic_info">기본 정보</string>
+    <string name="basic_info_title">타이틀</string>
+    <string name="description_basic_info_address">주소 :</string>
+    <string name="temporary_address">강원도 원주시</string>
 </resources>

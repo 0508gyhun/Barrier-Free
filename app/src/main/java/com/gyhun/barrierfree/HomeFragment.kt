@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.gyhun.barrierfree.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -25,16 +26,57 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val data = setDummyData()
-        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data)
-        binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data)
-        binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data)
-        binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data)
-        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data)
+
+        val isTabletLayout = isTablet()
+
+        if (isTabletLayout) {
+            setAdapterTablet(data)
+        } else {
+            setAdapterPhone(data)
+        }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun isTablet(): Boolean {
+        val homeActivity = requireActivity() as? HomeActivity
+        val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
+        return isTabletLayout
+    }
+
+    private fun setAdapterPhone(data: List<PagerItem>) {
+        setHomeRecommendationAdapters(data) { pagerItem ->
+            navigateToDetailFragmentPhone(pagerItem)
+        }
+    }
+
+    private fun setAdapterTablet(data: List<PagerItem>) {
+        setHomeRecommendationAdapters(data) { pagerItem ->
+            navigateToDetailFragmentTablet(pagerItem)
+        }
+    }
+
+    private fun setHomeRecommendationAdapters(
+        data: List<PagerItem>,
+        onClick: (PagerItem) -> Unit
+    ) {
+        binding.vpTodayBarrierFreeRecommend.adapter = ImageSliderAdapter(data, onClick)
+        binding.rvTouristAttractionRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+        binding.rvCulturalFacilityRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+        binding.rvAccommodationRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+        binding.rvFoodRecommendation.adapter = HomeBarrierFreeAdapter(data, onClick)
+    }
+
+    private fun navigateToDetailFragmentPhone(item: PagerItem) {
+        val action =
+            HomeFragmentDirections.actionBottomNavigationHomeToDetailFragment(item)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToDetailFragmentTablet(pagerItem: PagerItem) {
+        val navController =
+            requireActivity().supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment_detail)
+                ?.findNavController()
+        val action = DetailGraphDirections.actionGlobalDetailFragment(pagerItem)
+        navController?.navigate(action)
     }
 
     private fun setDummyData(): List<PagerItem> {
@@ -45,5 +87,10 @@ class HomeFragment : Fragment() {
             PagerItem("https://i.imgur.com/rhpC3OB.png", "제천시장", "충북 제천 구리시 이천면 멍멍"),
         )
         return data
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
