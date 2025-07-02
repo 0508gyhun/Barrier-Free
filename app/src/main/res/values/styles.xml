@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTitle" parent="TextAppearance.Material3.DisplayMedium">
+    <style name="TextAppearance.Material3.DisplayMedium.Blue" parent="TextAppearance.Material3.DisplayMedium">
         <item name="android:textColor">@color/blue</item>
     </style>
 
-    <style name="ChipStyle" parent="Widget.Material3.Chip.Filter">
+    <style name="Widget.Material3.Chip.Filter.MyChipStyle" parent="Widget.Material3.Chip.Filter">
         <item name="android:textColor">@color/selector_chips_text</item>
         <item name="checkedIconTint">@color/white</item>
         <item name="chipBackgroundColor">@color/selector_chips_background</item>
     </style>
 
-    <style name="DetailFragmentStyle" parent="TextAppearance.Material3.TitleLarge">
+    <style name="TextAppearance.Material3.TitleLarge.Bold" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="HomeTitleStyle" parent="TextAppearance.Material3.TitleMedium">
+    <style name="TextAppearance.Material3.TitleMedium.bold" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="MoreTitleStyle">
+    <style name="TextAppearance.Material3.TitleMedium.bold.Blue" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/blue</item>
     </style>
 
-    <style name="BottomSheetStyle">
-        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
-        <item name="android:textColor">?android:attr/textColorSecondary</item>
-    </style>
 </resources>

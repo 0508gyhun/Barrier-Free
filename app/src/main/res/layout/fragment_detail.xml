@@ -37,7 +37,7 @@
 
     <TextView
         android:id="@+id/tv_detail_basic_info"
-        style="@style/DetailFragmentStyle"
+        style="@style/TextAppearance.Material3.TitleLarge.Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/tv_detail_basic_info_title"
-        style="@style/DetailFragmentStyle"
+        style="@style/TextAppearance.Material3.TitleLarge.Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -59,7 +59,7 @@
 
     <TextView
         android:id="@+id/tv_detail_basic_info_address_description"
-        style="@style/DetailFragmentStyle"
+        style="@style/TextAppearance.Material3.TitleLarge.Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -70,7 +70,7 @@
 
     <TextView
         android:id="@+id/tv_detail_basic_info_address"
-        style="@style/DetailFragmentStyle"
+        style="@style/TextAppearance.Material3.TitleLarge.Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"

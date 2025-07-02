@@ -44,19 +44,17 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/description_today_barrierfree_recommendation"
-                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium.bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_recommend_today_barrier_free_more"
+                style="@style/TextAppearance.Material3.TitleMedium.bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
                 android:text="@string/see_more"
-                android:textColor="@color/blue"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/tv_recommend_today_barrier_free"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_recommend_today_barrier_free" />
@@ -73,24 +71,22 @@
 
             <TextView
                 android:id="@+id/tv_recommend_tourist_attraction"
+                style="@style/TextAppearance.Material3.TitleMedium.bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/today_tourist_attraction_recommendation"
-                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/vp_today_barrier_free_recommend" />
 
             <TextView
                 android:id="@+id/tv_recommend_tourist_attraction_more"
+                style="@style/TextAppearance.Material3.TitleMedium.bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
                 android:text="@string/see_more"
-                android:textColor="@color/blue"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/tv_recommend_tourist_attraction"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_recommend_tourist_attraction" />
@@ -109,18 +105,18 @@
 
             <TextView
                 android:id="@+id/tv_recommend_cultural_facility"
+                style="@style/TextAppearance.Material3.TitleMedium.bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/today_cultural_facility_recommendation"
-                android:textAppearance="@style/HomeTitleStyle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_tourist_attraction_recommendation" />
 
             <TextView
                 android:id="@+id/tv_recommend_cultural_facility_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
@@ -143,7 +139,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_accommodation"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -154,7 +150,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_accommodation_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
@@ -177,7 +173,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_food"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -188,7 +184,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_food_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
