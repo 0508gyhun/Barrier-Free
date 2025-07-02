@@ -39,7 +39,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_today_barrier_free"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -50,7 +50,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_today_barrier_free_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
@@ -71,7 +71,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_tourist_attraction"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -82,7 +82,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_tourist_attraction_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
@@ -105,7 +105,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_cultural_facility"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -116,7 +116,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_cultural_facility_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
@@ -139,7 +139,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_accommodation"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -150,7 +150,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_accommodation_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"
@@ -173,7 +173,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_food"
-                style="@style/HomeTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -184,7 +184,7 @@
 
             <TextView
                 android:id="@+id/tv_recommend_food_more"
-                style="@style/MoreTitleStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="14dp"

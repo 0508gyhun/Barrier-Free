@@ -43,7 +43,7 @@
 
             <TextView
                 android:id="@+id/tv_restaurant_address"
-                style="@style/BottomSheetStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -56,7 +56,7 @@
 
             <TextView
                 android:id="@+id/tv_restaurant_call"
-                style="@style/BottomSheetStyle"
+                style="@style/TextAppearance.Material3.TitleMedium.Bold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
