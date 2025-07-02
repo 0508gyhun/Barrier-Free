@@ -18,24 +18,21 @@ class ImageSliderAdapter(
     ): ImageViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemHomeViewPagerBinding.inflate(inflater, parent, false)
-        return ImageViewHolder(binding, onItemClick)
+        return ImageViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(items[position], onItemClick)
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    inner class ImageViewHolder(
-        private val binding: ItemHomeViewPagerBinding,
-        private val onItemClick: ((PagerItem) -> Unit)?
-    ) :
+    inner class ImageViewHolder(private val binding: ItemHomeViewPagerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(pagerItem: PagerItem) {
+        fun bind(pagerItem: PagerItem, onItemClick: ((PagerItem) -> Unit)?) {
             binding.tvBarrierFreeTitle.text = pagerItem.title
             binding.tvBarrierFreeAddress.text = pagerItem.address
             onItemClick?.let { clickListener ->

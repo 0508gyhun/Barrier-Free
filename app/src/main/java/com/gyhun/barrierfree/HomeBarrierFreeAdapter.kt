@@ -16,7 +16,7 @@ class HomeBarrierFreeAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBarrierFreeViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemRecyclerViewBinding.inflate(inflater, parent, false)
-        return HomeBarrierFreeViewHolder(binding, onItemClick)
+        return HomeBarrierFreeViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -24,16 +24,15 @@ class HomeBarrierFreeAdapter(
     }
 
     override fun onBindViewHolder(holder: HomeBarrierFreeViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(items[position], onItemClick)
     }
 
     class HomeBarrierFreeViewHolder(
         private val binding: ItemRecyclerViewBinding,
-        private val onItemClick: ((PagerItem) -> Unit)?
     ) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(pagerItem: PagerItem) {
+        fun bind(pagerItem: PagerItem, onItemClick: ((PagerItem) -> Unit)?) {
             binding.tvTitleRecommendation.text = pagerItem.title
             binding.tvAddressRecommendation.text = pagerItem.address
             binding.ivRecommendation.loadUrl(pagerItem.imageUrl)
