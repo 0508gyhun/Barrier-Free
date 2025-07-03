@@ -11,7 +11,7 @@ import com.gyhun.barrierfree.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
     private var backPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +21,10 @@ class HomeActivity : AppCompatActivity() {
 
         connectNavigationAndNavController()
         setBackPressed()
+    }
+
+    fun isTablet(): Boolean {
+        return binding.extendNavigationRail != null
     }
 
     private fun connectNavigationAndNavController() {

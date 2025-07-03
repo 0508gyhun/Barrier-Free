@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
 
     private fun isTablet(): Boolean {
         val homeActivity = requireActivity() as? HomeActivity
-        val isTabletLayout = homeActivity?.binding?.extendNavigationRail != null
+        val isTabletLayout = homeActivity?.isTablet() ?: false
         return isTabletLayout
     }
 

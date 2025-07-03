@@ -50,7 +50,7 @@ class DetailFragment() : Fragment() {
 
     private fun isTablet(): Boolean {
         val homeActivity = requireActivity() as? HomeActivity
-        return homeActivity?.binding?.extendNavigationRail != null
+        return homeActivity?.isTablet() ?: false
     }
 
     private fun setLayout() {
