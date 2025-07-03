@@ -12,8 +12,8 @@
         android:layout_margin="4dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
 
             <ImageView
                 android:id="@+id/iv_recommendation"
-                android:layout_width="404dp"
+                android:layout_width="0dp"
                 android:layout_height="141dp"
                 android:contentDescription="@string/image_recommendation"
                 android:scaleType="centerCrop"
@@ -45,12 +45,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:text="@string/temp_title"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:maxLines="2"
-                android:ellipsize="end"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_recommendation" />
 
             <TextView
@@ -60,14 +60,14 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:text="@string/temp_address"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:maxLines="2"
-                android:ellipsize="end"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
