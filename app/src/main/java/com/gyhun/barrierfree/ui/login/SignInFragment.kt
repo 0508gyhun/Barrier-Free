@@ -59,7 +59,7 @@ class SignInFragment : Fragment() {
             auth.signInWithEmailAndPassword(userId, userPassword).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(),
-                        getString(R.string.Login_Success), Toast.LENGTH_SHORT).show()
+                        getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                     val intent = Intent(requireContext(), HomeActivity::class.java)
                     startActivity(intent)
                 } else {

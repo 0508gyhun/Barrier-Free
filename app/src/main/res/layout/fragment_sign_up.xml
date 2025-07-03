@@ -4,12 +4,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.google.android.material.appbar.AppBarLayout
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/signup_topAppBar"
@@ -25,13 +26,13 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:contentDescription="@string/wheelchair_icon"
-        android:src="@drawable/ic_wheelcahir"
+        android:src="@drawable/ic_wheelchair"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_app_title" />
 
     <TextView
         android:id="@+id/tv_app_title"
-        style="@style/AppTitle"
+        style="@style/TextAppearance.Material3.DisplayMedium.Blue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/app_title"

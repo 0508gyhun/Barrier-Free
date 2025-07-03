@@ -19,13 +19,21 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        connectNavigationAndNavController()
+        setBackPressed()
+    }
+
+    fun isTablet(): Boolean {
+        return binding.extendNavigationRail != null
+    }
+
+    private fun connectNavigationAndNavController() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.homeNavHostFragment.id) as NavHostFragment
         val navController = navHostFragment.findNavController()
-        binding.homeBottomNavigation.setupWithNavController(navController)
 
-        setBackPressed()
-
+        binding.homeBottomNavigation?.setupWithNavController(navController)
+        binding.extendNavigationRail?.setupWithNavController(navController)
     }
 
     private fun setBackPressed() {
@@ -39,10 +47,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 backPressedTime = System.currentTimeMillis()
             }
-        }
-
-
-        )
+        })
     }
-
 }

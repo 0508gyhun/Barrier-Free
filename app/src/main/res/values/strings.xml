@@ -10,7 +10,6 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="welcome_to_create_account">Welcome to create account</string>
-    <string name="search">search</string>
     <string name="map">map</string>
     <string name="my_page">my page</string>
     <string name="category">category</string>
@@ -41,6 +40,28 @@
     <string name="korea">전국</string>
     <string name="descripition_please_search_keyword">키워드를 검색어를 입력해주세요.</string>
     <string name="input_is_empty">입력값이 비었습니다.</string>
-    <string name="Login_Success">로그인 성공!</string>
+    <string name="login_success">로그인 성공!</string>
     <string name="Check_Email_Password">이메일과 비밀번호를 확인해주세요</string>
+    <string name="ic_appbar_menu">ic_appbar_menu</string>
+    <string name="app_name_kor">베리어프리</string>
+    <string name="description_image_barrier_free">description_image_barrier_free</string>
+    <string name="barrier_free_title">barrier_free_title</string>
+    <string name="barrier_free_address">barrier_free_address</string>
+    <string name="description_today_barrierfree_recommendation">오늘의 베리어프리 명소 추천</string>
+    <string name="see_more">더보기</string>
+    <string name="today_tourist_attraction_recommendation">오늘의 베리어프리 관광지 추천</string>
+    <string name="image_recommendation">image_recommendation</string>
+    <string name="today_cultural_facility_recommendation">오늘의 베리어프리 문화시설 추천</string>
+    <string name="temp_address">경기도 고양시 백범로 25길 63</string>
+    <string name="temp_title">안녕하세요</string>
+    <string name="today_accommodation_recommendation">오늘의 베리어프리 숙박시설 추천</string>
+    <string name="today_food_recommendation">오늘의 베리어프리 음식점 추천</string>
+    <string name="home">home</string>
+    <string name="image_detail">image_detail</string>
+    <string name="description_detail_layout">상세화면!</string>
+    <string name="detail_fragment_layout">상세화면</string>
+    <string name="basic_info">기본 정보</string>
+    <string name="basic_info_title">타이틀</string>
+    <string name="description_basic_info_address">주소 :</string>
+    <string name="temporary_address">강원도 원주시</string>
 </resources>
