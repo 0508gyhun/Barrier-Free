@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/ic_appbar_menu"
-        android:icon="@drawable/ic_wheelcahir"
+        android:icon="@drawable/ic_wheelchair"
         android:title="@string/ic_appbar_menu"
         app:showAsAction="always" />
 
