@@ -26,7 +26,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:contentDescription="@string/wheelchair_icon"
-        android:src="@drawable/ic_wheelcahir"
+        android:src="@drawable/ic_wheelchair"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_app_title" />
 
