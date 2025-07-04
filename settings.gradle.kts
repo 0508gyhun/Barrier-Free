@@ -21,5 +21,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Barrier-Free-Restaurant"
+rootProject.name = "Barrier-Free"
 include(":app")
